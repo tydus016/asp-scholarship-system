@@ -1,0 +1,55 @@
+﻿@model List<WebApplication1.Models.Applicants.Applicants>
+@{
+    ViewData["Title"] = "Admin Panel";
+}
+
+<div class="card mb-3 admin-card">
+    <div class="row g-0 admin-row">
+        <div class="col-md-4 quicklinks_wrapper">
+            <ul class="list-group text-center quicklinks">
+                <li class="list-group-item text-uppercase">
+                    <a asp-controller="Admin" asp-action="SchoolYear" class="h5 text-dark">School Year</a>
+                </li>
+            </ul>
+        </div>
+        <div class="col-md-8">
+            <div class="card-body">
+                <div class="card-title text-end">
+                    <a class="btn btn-primary btn-sm add-schoolyear" asp-controller="Admin" asp-action="Archives">View Archive</a>
+                </div>
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th>Date</th>
+                            <th>Applicant</th>
+                            <th>Application</th>
+                            <th>BMP</th>
+                            <th>CCS</th>
+                            <th>DOLE</th>
+                            <th></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach(var data in Model)
+                        {
+                            <tr>
+                                <td>@data.date</td>
+                                <td>@String.Concat(data.first_name, " ", data.middle_name, " ", data.last_name)</td>
+                                <td>
+                                    <a href="javascript:" data-id="@data.id" class="click-to-view">Click to view</a>
+                                </td>
+                                <td>@((data.bmp == 1) ? "✔" : "")</td>
+                                <td>@((data.ccs == 1) ? "✔" : "")</td>
+                                <td>@((data.dole == 1) ? "✔" : "")</td>
+                                <td>
+                                    <button class="btn btn-secondary btn-sm mark-as-done" data-id="@data.id" type="button">Mark as done</button>
+                                </td>
+                            </tr>
+                        }
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+

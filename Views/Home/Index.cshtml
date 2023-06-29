@@ -1,0 +1,252 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+<div class="modal fade" id="mainDialog" data-bs-backdrop="static" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-lg">
+        <div class="modal-content">
+            <div class="modal-header" id="mainDialogHeader">
+                <h5 class="modal-title" id="exampleModalLabel">Answer these questions first before registering a scholarship</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <form class="main-form" method="post">
+                <div class="modal-body">
+                    <h3 class="modal-title fw-bold text-center">Scholarship for?</h3>
+                    <h5 class="modal-title fw-lighter text-center fs-6">Choose Educational Level</h5>
+                    <div class="d-flex justify-content-center pt-2">
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input main_choice" type="radio" name="main_choice" id="inlineRadio1" value="1">
+                            <label class="form-check-label" for="inlineRadio1">Junior High School</label>
+                        </div>
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input main_choice" type="radio" name="main_choice" id="inlineRadio2" value="2">
+                            <label class="form-check-label" for="inlineRadio2">Senior High School</label>
+                        </div>
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input main_choice" type="radio" name="main_choice" id="inlineRadio3" value="3">
+                            <label class="form-check-label" for="inlineRadio3">College</label>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer d-flex justify-content-center border-0">
+                    <button type="submit" class="btn btn-primary">Next</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+
+
+<!-- jhs & shs modal -->
+<div class="modal fade" id="jhsModal" data-bs-backdrop="static" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-lg">
+        <div class="modal-content">
+            <div class="modal-header" id="elementaryModalHeader">
+                <h5 class="modal-title" id="exampleModalLabel">Answer these questions first before registering a scholarship</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <form class="jhsform" method="post">
+                <div class="modal-body">
+                    <h4 class="modal-title text-center text-capitalize mb-3 ocakes-title">applying for junior high school scholarship</h4>
+                    <div>
+                        <p1>1. Are you graduated from elementary school?</p1>
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input q1" name="q1" type="checkbox" id="q1_yes" value="1">
+                            <label class="form-check-label" for="q1_yes">Yes</label>
+                        </div>
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input q1" name="q1" type="checkbox" id="q1_no" value="0">
+                            <label class="form-check-label" for="q1_no">No</label>
+                        </div>
+                    </div>
+                    <div>
+                        <p1>2. Are you a filipino citizen?</p1>
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input q2" name="q2" type="checkbox" id="q2_yes" value="1">
+                            <label class="form-check-label" for="q2_yes">Yes</label>
+                        </div>
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input q2" name="q2" type="checkbox" id="q2_no" value="0">
+                            <label class="form-check-label" for="q2_no">No</label>
+                        </div>
+                    </div>
+                    <div>
+                        <p1>3. Are you an honor student?</p1>
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input q3" name="q3" type="checkbox" id="q3_yes" value="1">
+                            <label class="form-check-label" for="q3_yes">Yes</label>
+                        </div>
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input q3" name="q3" type="checkbox" id="q3_no" value="0">
+                            <label class="form-check-label" for="q3_no">No</label>
+                        </div>
+                    </div>
+                    <div>
+                        <p1>4. Do you have a failing grade?</p1>
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input q4" name="q4" type="checkbox" id="q4_yes" value="1">
+                            <label class="form-check-label" for="q4_yes">Yes</label>
+                        </div>
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input q4" name="q4" type="checkbox" id="q4_no" value="0">
+                            <label class="form-check-label" for="q4_no">No</label>
+                        </div>
+                    </div>
+                    <div>
+                        <p1>5. Do you have a passing grade?</p1>
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input q5" name="q5" type="checkbox" id="q5_yes" value="1">
+                            <label class="form-check-label" for="q5_yes">Yes</label>
+                        </div>
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input q5" name="q5" type="checkbox" id="q5_no" value="0">
+                            <label class="form-check-label" for="q5_no">No</label>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    <button type="submit" class="btn btn-primary">Submit</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+<!-- college modal -->
+<div class="modal fade" id="collegeModal" data-bs-backdrop="static" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-lg">
+        <div class="modal-content">
+            <div class="modal-header" id="collegeModalHeader">
+                <h5 class="modal-title" id="collegeModalLabel">Answer these questions first before registering a scholarship</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <form class="collegeform" method="post">
+                <div class="modal-body">
+                    <h4 class="modal-title text-center text-capitalize mb-3 ocakes-title">applying for college scholarship</h4>
+                    <div>
+                        <p1>1. Have you graduated in senior public school, public high school old curriculum or ALS?</p1>
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input q1" name="q1" type="checkbox" id="q1_yes_" value="1">
+                            <label class="form-check-label" for="q1_yes_">Yes</label>
+                        </div>
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input q1" name="q1" type="checkbox" id="q1_no_" value="0">
+                            <label class="form-check-label" for="q1_no_">No</label>
+                        </div>
+                    </div>
+                    <div>
+                        <p1>2. Are your parents have voted in the past 2 Local/National Elections?</p1>
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input q2" name="q2" type="checkbox" id="q2_yes_" value="1">
+                            <label class="form-check-label" for="q2_yes_">Yes</label>
+                        </div>
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input q2" name="q2" type="checkbox" id="q2_no_" value="0">
+                            <label class="form-check-label" for="q2_no_">No</label>
+                        </div>
+                    </div>
+                    <div>
+                        <p1>3. Are you a resident of cebu city?</p1>
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input q3" name="q3" type="checkbox" id="q3_yes_" value="1">
+                            <label class="form-check-label" for="q3_yes_">Yes</label>
+                        </div>
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input q3" name="q3" type="checkbox" id="q3_no_" value="0">
+                            <label class="form-check-label" for="q3_no_">No</label>
+                        </div>
+                    </div>
+                    <div>
+                        <p1>4. Are you a filipino citizen?</p1>
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input q4" name="q4" type="checkbox" id="q4_yes_" value="1">
+                            <label class="form-check-label" for="q4_yes_">Yes</label>
+                        </div>
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input q4" name="q4" type="checkbox" id="q4_no_" value="0">
+                            <label class="form-check-label" for="q4_no_">No</label>
+                        </div>
+                    </div>
+                    <div>
+                        <p1>5. Are you an honor student?</p1>
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input q5" name="q5" type="checkbox" id="q5_yes_" value="1">
+                            <label class="form-check-label" for="q5_yes_">Yes</label>
+                        </div>
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input q5" name="q5" type="checkbox" id="q5_no_" value="0">
+                            <label class="form-check-label" for="q5_no_">No</label>
+                        </div>
+                    </div>
+                    <div>
+                        <p1>6. Do you have a failing grade?</p1>
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input q5" name="q6" type="checkbox" id="q6_yes_" value="1">
+                            <label class="form-check-label" for="q6_yes_">Yes</label>
+                        </div>
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input q5" name="q6" type="checkbox" id="q6_no_" value="0">
+                            <label class="form-check-label" for="q6_no_">No</label>
+                        </div>
+                    </div>
+                    <div>
+                        <p1>7. Do you have a passing grade?</p1>
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input q5" name="q7" type="checkbox" id="q7_yes_" value="1">
+                            <label class="form-check-label" for="q7_yes_">Yes</label>
+                        </div>
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input q5" name="q7" type="checkbox" id="q7_no_" value="0">
+                            <label class="form-check-label" for="q7_no_">No</label>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    <button type="submit" class="btn btn-primary">Submit</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+<!-- scholarship choices modal -->
+<div class="modal fade" id="scholarsModal" data-bs-backdrop="static" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-lg">
+        <div class="modal-content" id="scholarsModalContent">
+            <div class="modal-body">
+                <h5 class="card-title" id="scholarsModalMsg">
+                    Congratulations! You are Qualified to Avail These Scholarship. Please Choose One to Register
+                </h5>
+                <div class="d-flex justify-content-start flex-column">
+                    <div class="card mb-3 cebucityscholarcard" style="width:18rem; display: none;">
+                        <input type="checkbox" name="cebucity_checkbox" id="cebucity_checkbox">
+                            <div class="card-body">
+                                <h5 class="card-title">CEBU CITY SCHOLARSHIP</h5>
+                            </div>
+                        </input>
+                    </div>
+                    <div class="card mb-5 batangmaypangarapcard" style="width: 18rem; display: none;">
+                        <input type="checkbox" name="bmp_checkbox" id="bmp_checkbox">
+                            <div class="card-body">
+                                <h5 class="card-title">BATANG MAY PANGARAP</h5>
+                            </div>
+                        </input>
+                    </div>
+                    <div class="card mb-5 dolecard" style="width: 18rem; display: none;">
+                        <input type="checkbox" name="dole_checkbox" id="dole_checkbox">
+                            <div class="card-body">
+                                <h5 class="card-title">DOLE</h5>
+                            </div>
+                        </input>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-primary scholarship-btn">Submit</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

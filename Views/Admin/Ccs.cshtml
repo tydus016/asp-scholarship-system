@@ -1,0 +1,46 @@
+﻿@model List<WebApplication1.Models.Ccs.Ccs>
+@{
+    ViewData["Title"] = "Admin Panel";
+}
+
+<div class="card mb-3 admin-card">
+    <div class="row g-0 admin-row">
+        <div class="col-md-4 quicklinks_wrapper">
+            <ul class="list-group text-center quicklinks">
+                <li class="list-group-item text-uppercase">
+                    <a asp-controller="Admin" asp-action="Ccs" class="h5 text-dark">CEBU CITY SCHOLARSHIP APPLICANT</a>
+                </li>
+                <li class="list-group-item text-uppercase">
+                    <a asp-controller="Admin" asp-action="Batang" class="h5 text-dark">
+                        BATANG MAY PANGARAP APPLICANT
+                    </a>
+                </li>
+                <li class="list-group-item text-uppercase">
+                    <a asp-controller="Admin" asp-action="Report" class="h5 text-dark">DAILY REPORT</a>
+                </li>
+            </ul>
+        </div>
+        <div class="col-md-8">
+            <div class="card-body">
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th>Name</th>
+                            <th>Application</th>
+                            <th><input type="email" class="form-control" placeholder="Search"></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (var ccs in Model)
+                        {
+                            <tr>
+                                <td>@String.Concat(ccs.FirstName, " ", ccs.MiddleName, " ", ccs.LastName)</td>
+                                <td><a href="ViewCcs/@ccs.Id">click to view</a></td>
+                            </tr>
+                        }
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,49 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+    ViewData["Title"] = "Admin Panel";
+}
+
+<div class="card mb-3 admin-card">
+    <div class="row g-0 admin-row">
+        <div class="col-md-4 quicklinks_wrapper">
+            <ul class="list-group text-center quicklinks">
+                <li class="list-group-item text-uppercase">
+                    <a asp-controller="Admin" asp-action="Ccs" class="h5 text-dark">CEBU CITY SCHOLARSHIP APPLICANT</a>
+                </li>
+                <li class="list-group-item text-uppercase">
+                    <a asp-controller="Admin" asp-action="Batang" class="h5 text-dark">
+                        BATANG MAY PANGARAP APPLICANT
+                    </a>
+                </li>
+                <li class="list-group-item text-uppercase">
+                    <a asp-controller="Admin" asp-action="Report" class="h5 text-dark">DAILY REPORT</a>
+                </li>
+            </ul>
+        </div>
+        <div class="col-md-8">
+            <div class="card-body">
+                <h5 class="card-title text-center">TOTAL OF APPLICANTS APPLIED</h5>
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th>DATE</th>
+                            <th>CCS</th>
+                            <th>BMP</th>
+                            <th>TOTAL</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>@DateTime.Now.ToString("yyyy-MM-dd")</td>
+                            <td>@ViewBag.CebuCity</td>
+                            <td>@ViewBag.Bmp</td>
+                            <td>@ViewBag.TotalCount</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>

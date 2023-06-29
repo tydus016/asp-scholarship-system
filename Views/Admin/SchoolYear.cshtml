@@ -1,0 +1,65 @@
+﻿@model List<WebApplication1.Models.Schoolyear.Schoolyear>
+@{
+    ViewData["Title"] = "Admin Panel";
+}
+
+<div class="card mb-3 admin-card">
+    <div class="row g-0 admin-row">
+        <div class="col-md-4 quicklinks_wrapper">
+            <ul class="list-group text-center quicklinks">
+                <li class="list-group-item text-uppercase">
+                    <a asp-controller="Admin" asp-action="SchoolYear" class="h5 text-dark">School Year</a>
+                </li>
+            </ul>
+        </div>
+        <div class="col-md-8">
+            <div class="card-body">
+                <div class="card-title text-end">
+                    <button class="btn btn-primary btn-sm add-schoolyear" type="button" data-bs-toggle="modal" data-bs-target="#addSyModal">+</button>
+                </div>
+                <ul class="list-group text-center mt-5">
+                    @foreach (var data in Model)
+                    {
+                        <li class="list-group-item">
+                            <a href="data/@data.school_year">@data.year_start - @data.year_end</a>
+                        </li>
+                    }
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<div class="modal fade" id="addSyModal" tabindex="-1" aria-labelledby="addSyModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="addSyModalLabel">Add School Year</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <form class="addschoolyearform">
+                <div class="modal-body">
+                    <div class="row">
+                        <div class="col-6">
+                            <div class="mb-3">
+                                <label for="year_start" class="form-label">School Year Start</label>
+                                <input type="number" class="form-control" id="year_start" name="year_start">
+                            </div>
+                        </div>
+                        <div class="col-6">
+                            <div class="mb-3">
+                                <label for="year_end" class="form-label">School Year End</label>
+                                <input type="number" class="form-control" id="year_end" name="year_end">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    <button type="submit" class="btn btn-primary">Save</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

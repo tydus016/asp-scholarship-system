@@ -1,0 +1,93 @@
+﻿@{
+    ViewData["Title"] = "Cebu City Scholarship";
+}
+
+<div class="card">
+    <div class="card-body cardforms">
+        <h4 class="card-title text-center fw-bold">Cebu City Scholarship</h4>
+        <form class="ccsform" action="cebucity/add" method="post">
+            <div class="mb-3">
+                <label for="firstname" class="form-label">First Name</label>
+                <input type="text" class="form-control" id="firstname" name="firstname">
+            </div>
+            <div class="mb-3">
+                <label for="lastname" class="form-label">Last Name</label>
+                <input type="text" class="form-control" id="lastname" name="lastname">
+            </div>
+            <div class="mb-3">
+                <label for="middlename" class="form-label">Middle Name</label>
+                <input type="text" class="form-control" id="middlename" name="middlename">
+            </div>
+            <div class="mb-3">
+                <label for="elementary" class="form-label">Elementary School</label>
+                <input type="text" class="form-control" id="elementary" name="elementary">
+            </div>
+            <div class="mb-3">
+                <label for="junior" class="form-label">Junior High School</label>
+                <input type="text" class="form-control" id="junior" name="junior">
+            </div>
+            <div class="mb-3">
+                <label for="senior" class="form-label">Senior High School</label>
+                <input type="text" class="form-control" id="senior" name="senior">
+            </div>
+            <div class="mb-3">
+                <label for="mother" class="form-label">Name of Mother</label>
+                <input type="text" class="form-control" id="mother" name="mother">
+            </div>
+            <div class="mb-3">
+                <label for="father" class="form-label">Name of Father</label>
+                <input type="text" class="form-control" id="father" name="father">
+            </div>
+            <div class="mb-3">
+                <label for="address" class="form-label">Address</label>
+                <input type="text" class="form-control" id="address" name="address">
+            </div>
+            <div class="mb-3">
+                <label for="dob" class="form-label">Date of Birth</label>
+                <input type="date" class="form-control" id="dob" name="dob">
+            </div>
+            <div class="mb-3">
+                <label for="pob" class="form-label">Place of Birth</label>
+                <input type="text" class="form-control" id="pob" name="pob">
+            </div>
+            <div class="mb-3">
+                <label for="contact_no" class="form-label">Contact Number</label>
+                <input type="text" class="form-control" id="contact_no" name="contact_no">
+            </div>
+            <div class="mb-3">
+                <label for="email" class="form-label">Email</label>
+                <input type="email" class="form-control" id="email" name="email">
+            </div>
+            <div>
+                <p class="card-text">II.</p>
+                <p class="card-text">PLEASE UPLOAD FOLLOWING REQUIREMENTS<br /><small>(if there are to be followed requirements, present it in school coordinator at Golden Success College)</small></p>
+                <ol>
+                    <li>
+                        Original Copy of Cebu City Comelec Voters Certification of Parents or Applicant if Above 25 Years Old ( Must Have
+                        Voted in the past 2 Local/ National Elections)
+                    </li>
+                    <li>
+                        Original Copy of Barangay Certification as to residency of parent or scholar / applicant if Above 25 Years Old.
+                    </li>
+                    <li>
+                        Copy of proof of residency such as MCWD , VECO or pldt.
+                    </li>
+                    <li>
+                        Copy of PSA
+                    </li>
+                    <li>
+                        Copy of PSA
+                    </li>
+                    <li>
+                        Copy of Junior High School Diploma from public school in Cebu City.
+                    </li>
+                    <li>Copy of Senior High School Diploma from public school in Cebu City</li>
+                </ol>
+                <div class="mb-3">
+                    <input type="file" class="form-control" id="ccs_file">
+                </div>
+            </div>
+            <button type="submit" class="btn btn-primary">Submit Form</button>
+        </form>
+    </div>
+</div>

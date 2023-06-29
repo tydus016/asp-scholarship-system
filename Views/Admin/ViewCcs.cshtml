@@ -1,0 +1,44 @@
+﻿@{
+    ViewData["Title"] = "Admin Panel";
+}
+
+<div class="card mb-3 admin-card">
+    <div class="row g-0 admin-row">
+        <div class="col-md-4 quicklinks_wrapper">
+            <ul class="list-group text-center quicklinks">
+                <li class="list-group-item text-uppercase">
+                    <a asp-controller="Admin" asp-action="Ccs" class="h5 text-dark">CEBU CITY SCHOLARSHIP APPLICANT</a>
+                </li>
+                <li class="list-group-item text-uppercase">
+                    <a asp-controller="Admin" asp-action="Batang" class="h5 text-dark">
+                        BATANG MAY PANGARAP APPLICANT
+                    </a>
+                </li>
+                <li class="list-group-item text-uppercase">
+                    <a asp-controller="Admin" asp-action="Report" class="h5 text-dark">DAILY REPORT</a>
+                </li>
+            </ul>
+        </div>
+        <div class="col-md-8">
+            <div class="card-body">
+                <div class="card">
+                    <div class="card-body">
+                        <ul class="list-group list-group-flush">
+                            <li class="list-group-item"><b>Name</b> @String.Concat(Model.FirstName, " ", Model.MiddleName, " ", Model.LastName)</li>
+                            <li class="list-group-item"><b>Elementary Education</b> @Model.Elementary</li>
+                            <li class="list-group-item"><b>Junior High School Education</b> @Model.Junior</li>
+                            <li class="list-group-item"><b>Senior High Scool Education</b> @Model.Senior</li>
+                            <li class="list-group-item"><b>Mother</b> @Model.Mother</li>
+                            <li class="list-group-item"><b>Father</b> @Model.Father</li>
+                            <li class="list-group-item"><b>Address</b> @Model.Address</li>
+                            <li class="list-group-item"><b>Date of Birth</b> @Model.DateOfBirth</li>
+                            <li class="list-group-item"><b>Place of Birth</b> @Model.PlaceOfBirth</li>
+                            <li class="list-group-item"><b>Contact #</b> @Model.ContactNumber</li>
+                            <li class="list-group-item"><b>Email</b> @Model.Email</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
