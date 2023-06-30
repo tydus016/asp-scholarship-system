@@ -13,10 +13,16 @@ $('.scholarship-btn').click(function () {
     let cebucity_checkbox = $('#cebucity_checkbox').is(':checked')
     let bmp_checkbox = $('#bmp_checkbox').is(':checked')
     let dole_checkbox = $('#dole_checkbox').is(':checked')
+    let free_tuition_fee_checkbox = $('#free_tuition_fee_checkbox').is(':checked')
+    let subsidized_checkbox = $('#subsidized_checkbox').is(':checked')
+    let special_package_checkbox = $('#special_package_checkbox').is(':checked')
 
     localStorage.setItem('cebucity_checkbox', cebucity_checkbox ? 1 : 0)
     localStorage.setItem('bmp_checkbox', bmp_checkbox ? 1 : 0)
     localStorage.setItem('dole_checkbox', dole_checkbox ? 1 : 0)
+    localStorage.setItem('free_tuition_fee_checkbox', free_tuition_fee_checkbox ? 1 : 0)
+    localStorage.setItem('subsidized_checkbox', subsidized_checkbox ? 1 : 0)
+    localStorage.setItem('special_package_checkbox', special_package_checkbox ? 1 : 0)
 
     location.replace('home/'+selected_form)
 
@@ -30,6 +36,9 @@ $('.jhsappform').submit(function (e) {
     data.append('bmp', localStorage.getItem('bmp_checkbox'))
     data.append('ccs', localStorage.getItem('cebucity_checkbox'))
     data.append('dole', localStorage.getItem('dole_checkbox'))
+    data.append('free_tuition_fee', localStorage.getItem('free_tuition_fee_checkbox'))
+    data.append('subsidized', localStorage.getItem('subsidized_checkbox'))
+    data.append('special', localStorage.getItem('special_package_checkbox'))
 
     const currentDate = new Date();
     const schoolyear = currentDate.getFullYear();
@@ -39,6 +48,7 @@ $('.jhsappform').submit(function (e) {
     ajax(data, 'cebucity/SubmitApplication').then(res => {
         self[0].reset()
         alert(res.message)
+        resetStorage()
     })
 
 })
@@ -50,6 +60,9 @@ $('.collegeappform').submit(function (e) {
     data.append('bmp', localStorage.getItem('bmp_checkbox'))
     data.append('ccs', localStorage.getItem('cebucity_checkbox'))
     data.append('dole', localStorage.getItem('dole_checkbox'))
+    data.append('free_tuition_fee', localStorage.getItem('free_tuition_fee_checkbox'))
+    data.append('subsidized', localStorage.getItem('subsidized_checkbox'))
+    data.append('special', localStorage.getItem('special_package_checkbox'))
 
     const currentDate = new Date();
     const schoolyear = currentDate.getFullYear();
@@ -59,8 +72,13 @@ $('.collegeappform').submit(function (e) {
     ajax(data, 'cebucity/SubmitApplication').then(res => {
         self[0].reset()
         alert(res.message)
+        resetStorage()
     })
 
+})
+
+$('.modal_close').click(function () {
+   location.reload()
 })
 
 
@@ -73,11 +91,19 @@ $('.main-form').submit(function (e) {
     if (data[0].value == 1) {
         $('.ocakes-title').html('')
         $('.ocakes-title').html('applying for junior high school scholarship')
+        $('.q1-title').html('')
+        $('.q1-title').html('1. Are you graduated in elementary school?')
+        $('.q7-title').html('')
+        $('.q7-title').html('7. Did you finish elementary in provincial school?')
         $('#jhsModal').modal('toggle')
         localStorage.setItem('selected_form', 'jhs')
     } else if (data[0].value == 2) {
         $('.ocakes-title').html('')
         $('.ocakes-title').html('applying for senior high school scholarship')
+        $('.q1-title').html('')
+        $('.q1-title').html('1. Are you graduated in junior high school from public school?')
+        $('.q7-title').html('')
+        $('.q7-title').html('7. Did you finish junior high school in provincial school?')
         localStorage.setItem('selected_form', 'shs')
         $('#jhsModal').modal('toggle')
     } else {
@@ -139,6 +165,15 @@ $('.addschoolyearform').submit(function (e) {
     console.log(data)
 })
 
+function resetStorage() {
+    localStorage.setItem('cebucity_checkbox', 0)
+    localStorage.setItem('bmp_checkbox', 0)
+    localStorage.setItem('dole_checkbox', 0)
+    localStorage.setItem('free_tuition_fee_checkbox', 0)
+    localStorage.setItem('subsidized_checkbox', 0)
+    localStorage.setItem('special_package_checkbox', 0)
+}
+
 $('.jhsform').submit(function (e) {
     e.preventDefault()
     var q1 = $('#q1_yes').is(':checked')
@@ -146,17 +181,32 @@ $('.jhsform').submit(function (e) {
     var q3 = $('#q3_yes').is(':checked')
     var q4 = $('#q4_yes').is(':checked')
     var q5 = $('#q5_yes').is(':checked')
+    var q6 = $('#q6_yes').is(':checked')
+    var q7 = $('#q7_yes').is(':checked')
     const cebucityscholarcard = $('.cebucityscholarcard')
     const batangmaypangarapcard = $('.batangmaypangarapcard')
     const dolecard = $('.dolecard')
+    const free_tuition_fee = $('.free_tuition_fee')
+    const subsidized = $('.subsidized')
+    const special_package = $('.special_package')
+
+
 
     if (q4) {
         $('#scholarsModalMsg').html('')
         $('#scholarsModalMsg').html('<i>We regret that you are not eligible for the scholarship that our school is currently giving.Thank you so much and have a good one!</i>')
-    } else if (!q1) {
-        $('#scholarsModalMsg').html('')
-        $('#scholarsModalMsg').html('<i>No results!</i>')
+    } else if (!q1 && !q2 && !q3 && !q4 && !q5 && !q6 && !q7) {
+        special_package.show()
     } else {
+        if (q1) {
+            free_tuition_fee.show()
+        }
+        if (q6) {
+            subsidized.show()
+        }
+        if (q7) {
+            special_package.show()
+        }
         if (q5) {
             if (q2 && q3) {
                 dolecard.show()
@@ -183,17 +233,31 @@ $('.collegeform').submit(function (e) {
     var q5 = $('#q5_yes_').is(':checked')
     var q6 = $('#q6_yes_').is(':checked')
     var q7 = $('#q7_yes_').is(':checked')
+    var q8 = $('#q8_yes_').is(':checked')
+    var q9 = $('#q9_yes_').is(':checked')
     const cebucityscholarcard = $('.cebucityscholarcard')
     const batangmaypangarapcard = $('.batangmaypangarapcard')
     const dolecard = $('.dolecard')
+    const free_tuition_fee = $('.free_tuition_fee')
+    const subsidized = $('.subsidized')
+    const special_package = $('.special_package')
 
     if (q6) {
         $('#scholarsModalMsg').html('')
         $('#scholarsModalMsg').html('<i>We regret that you are not eligible for the scholarship that our school is currently giving.Thank you so much and have a good one!</i>')
-    } else if (!q1 || !q7) {
+    } else if (!q7) {
         $('#scholarsModalMsg').html('')
         $('#scholarsModalMsg').html('<i>No results!</i>')
     } else {
+        if (q1) {
+            free_tuition_fee.show()
+        }
+        if (q8) {
+            subsidized.show()
+        }
+        if (q9) {
+            special_package.show()
+        }
         if (q2 && q4 && q5) {
             if (q3) {
                 cebucityscholarcard.show()
@@ -340,6 +404,16 @@ $('#q6_no').change(function () {
         $('#q6_yes').prop('checked', false)
     }
 })
+$('#q7_yes').change(function () {
+    if ($(this).is(':checked')) {
+        $('#q7_no').prop('checked', false)
+    }
+})
+$('#q7_no').change(function () {
+    if ($(this).is(':checked')) {
+        $('#q7_yes').prop('checked', false)
+    }
+})
 
 
 $('#q1_yes_').change(function () {
@@ -416,5 +490,25 @@ $('#q7_yes_').change(function () {
 $('#q7_no_').change(function () {
     if ($(this).is(':checked')) {
         $('#q7_yes_').prop('checked', false)
+    }
+})
+$('#q8_yes_').change(function () {
+    if ($(this).is(':checked')) {
+        $('#q8_no_').prop('checked', false)
+    }
+})
+$('#q8_no_').change(function () {
+    if ($(this).is(':checked')) {
+        $('#q8_yes_').prop('checked', false)
+    }
+})
+$('#q9_yes_').change(function () {
+    if ($(this).is(':checked')) {
+        $('#q9_no_').prop('checked', false)
+    }
+})
+$('#q9_no_').change(function () {
+    if ($(this).is(':checked')) {
+        $('#q9_yes_').prop('checked', false)
     }
 })

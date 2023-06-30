@@ -19,6 +19,9 @@
         public int bmp { get; set; }
         public int ccs { get; set; }
         public int dole { get; set; }
+        public int free_tuition_fee { get; set; }
+        public int subsidized { get; set; }
+        public int special { get; set; }
         public string school_year { get; set; }
         public int status { get; set; }
         public string filename { get; set; }

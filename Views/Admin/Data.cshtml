@@ -26,7 +26,22 @@
                             <th>BMP</th>
                             <th>CCS</th>
                             <th>DOLE</th>
-                            <th></th>
+                            <th>
+                                FREE
+                                TUTION
+                                FEE
+                            </th>
+                            <th>
+                                SUBSIDIZED
+                                TUITION
+                                FEE
+                            </th>
+                            <th>
+                                SPECIAL
+                                PACKAGE
+                                RATE
+                            </th>
+                            <th style="width: 500px;"></th>
                         </tr>
                     </thead>
                     <tbody>
@@ -41,6 +56,9 @@
                                 <td>@((data.bmp == 1) ? "✔" : "")</td>
                                 <td>@((data.ccs == 1) ? "✔" : "")</td>
                                 <td>@((data.dole == 1) ? "✔" : "")</td>
+                                <td>@((data.free_tuition_fee == 1) ? "✔" : "")</td>
+                                <td>@((data.subsidized == 1) ? "✔" : "")</td>
+                                <td>@((data.special == 1) ? "✔" : "")</td>
                                 <td>
                                     <button class="btn btn-secondary btn-sm mark-as-done" data-id="@data.id" type="button">Mark as done</button>
                                 </td>

@@ -21,7 +21,10 @@ namespace WebApplication1.Controllers
         [HttpGet]
         public IActionResult Login() { return View(); }
         public async Task<IActionResult> SchoolYear() {
-            var data = await _allContext.schoolyear.ToListAsync();
+            var data = await _allContext
+                .schoolyear
+                .OrderByDescending(x => x.year_end)
+                .ToListAsync();
 
             return View(data);
         }

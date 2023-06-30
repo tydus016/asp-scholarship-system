@@ -49,7 +49,7 @@
                 <div class="modal-body">
                     <h4 class="modal-title text-center text-capitalize mb-3 ocakes-title">applying for junior high school scholarship</h4>
                     <div>
-                        <p1>1. Are you graduated from elementary school?</p1>
+                        <p1 class="q1-title">1. Are you graduated in elementary school?</p1>
                         <div class="form-check form-check-inline">
                             <input class="form-check-input q1" name="q1" type="checkbox" id="q1_yes" value="1">
                             <label class="form-check-label" for="q1_yes">Yes</label>
@@ -103,9 +103,31 @@
                             <label class="form-check-label" for="q5_no">No</label>
                         </div>
                     </div>
+                    <div>
+                        <p1>6. Are your parents seafarers?</p1>
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input q6" name="q6" type="checkbox" id="q6_yes" value="1">
+                            <label class="form-check-label" for="q6_yes">Yes</label>
+                        </div>
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input q6" name="q6" type="checkbox" id="q6_no" value="0">
+                            <label class="form-check-label" for="q6_no">No</label>
+                        </div>
+                    </div>
+                    <div>
+                        <p1 class="q7-title">7. Did you finish elementary in provincial school?</p1>
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input q7" name="q7" type="checkbox" id="q7_yes" value="1">
+                            <label class="form-check-label" for="q7_yes">Yes</label>
+                        </div>
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input q7" name="q7" type="checkbox" id="q7_no" value="0">
+                            <label class="form-check-label" for="q7_no">No</label>
+                        </div>
+                    </div>
                 </div>
                 <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-secondary modal_close" data-bs-dismiss="modal">Close</button>
                     <button type="submit" class="btn btn-primary">Submit</button>
                 </div>
             </form>
@@ -125,7 +147,10 @@
                 <div class="modal-body">
                     <h4 class="modal-title text-center text-capitalize mb-3 ocakes-title">applying for college scholarship</h4>
                     <div>
-                        <p1>1. Have you graduated in senior public school, public high school old curriculum or ALS?</p1>
+                        <p1>
+                            1. have you graduated in senior high from public school , public high school old curriculum or ALS within cebu
+                            city?
+                        </p1>
                         <div class="form-check form-check-inline">
                             <input class="form-check-input q1" name="q1" type="checkbox" id="q1_yes_" value="1">
                             <label class="form-check-label" for="q1_yes_">Yes</label>
@@ -201,9 +226,31 @@
                             <label class="form-check-label" for="q7_no_">No</label>
                         </div>
                     </div>
+                    <div>
+                        <p1>8. Are your parents seafarers?</p1>
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input q8" name="q8" type="checkbox" id="q8_yes_" value="1">
+                            <label class="form-check-label" for="q8_yes_">Yes</label>
+                        </div>
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input q8" name="q8" type="checkbox" id="q8_no_" value="0">
+                            <label class="form-check-label" for="q8_no_">No</label>
+                        </div>
+                    </div>
+                    <div>
+                        <p1>9. Did you graduate senior high school in provincial school?</p1>
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input q9" name="q9" type="checkbox" id="q9_yes_" value="1">
+                            <label class="form-check-label" for="q9_yes_">Yes</label>
+                        </div>
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input q9" name="q9" type="checkbox" id="q9_no_" value="0">
+                            <label class="form-check-label" for="q9_no_">No</label>
+                        </div>
+                    </div>
                 </div>
                 <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-secondary modal_close" data-bs-dismiss="modal">Close</button>
                     <button type="submit" class="btn btn-primary">Submit</button>
                 </div>
             </form>
@@ -238,6 +285,27 @@
                         <input type="checkbox" name="dole_checkbox" id="dole_checkbox">
                             <div class="card-body">
                                 <h5 class="card-title">DOLE</h5>
+                            </div>
+                        </input>
+                    </div>
+                    <div class="card mb-5 free_tuition_fee" style="width: 18rem; display: none;">
+                        <input type="checkbox" name="free_tuition_fee_checkbox" id="free_tuition_fee_checkbox">
+                            <div class="card-body">
+                                <h5 class="card-title">Free tuition Fee – Subject to Approved grants from private / government agencies</h5>
+                            </div>
+                        </input>
+                    </div>
+                    <div class="card mb-5 subsidized" style="width: 18rem; display: none;">
+                        <input type="checkbox" name="subsidized_checkbox" id="subsidized_checkbox">
+                            <div class="card-body">
+                                <h5 class="card-title">Subsidized Tuition Fee – 50% of the tuition fee plus the remaining miscellaneous and other fees</h5>
+                            </div>
+                        </input>
+                    </div>
+                    <div class="card mb-5 special_package" style="width: 18rem; display: none;">
+                        <input type="checkbox" name="special_package_checkbox" id="special_package_checkbox">
+                            <div class="card-body">
+                                <h5 class="card-title">Special/ Package Rate – A fixed Package amount every school year.</h5>
                             </div>
                         </input>
                     </div>
