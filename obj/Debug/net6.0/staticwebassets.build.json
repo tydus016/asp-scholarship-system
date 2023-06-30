@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "760Q6vgn9PfaW8BliGjISOqNMdnGzeaRsTrRFwCEql8=",
+  "Hash": "C4K1KRTbx9tEeFLTma5LovqUabRWBA61NTb1hVzuJ+M=",
   "Source": "WebApplication1",
   "BasePath": "_content/WebApplication1",
   "Mode": "Default",
@@ -100,6 +100,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\favicon.ico"
+    },
+    {
+      "Identity": "D:\\asp\\WebApplication1\\wwwroot\\files\\Added-and-Change.pdf",
+      "SourceId": "WebApplication1",
+      "SourceType": "Discovered",
+      "ContentRoot": "D:\\asp\\WebApplication1\\wwwroot\\",
+      "BasePath": "_content/WebApplication1",
+      "RelativePath": "files/Added-and-Change.pdf",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\files\\Added-and-Change.pdf"
     },
     {
       "Identity": "D:\\asp\\WebApplication1\\wwwroot\\files\\ADMIN.pdf",

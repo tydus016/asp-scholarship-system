@@ -191,6 +191,10 @@ $('.jhsform').submit(function (e) {
     const special_package = $('.special_package')
 
 
+    var form = $(this).children()
+    if (validator(form, 7)) {
+        return
+    }
 
     if (q4) {
         $('#scholarsModalMsg').html('')
@@ -242,6 +246,11 @@ $('.collegeform').submit(function (e) {
     const subsidized = $('.subsidized')
     const special_package = $('.special_package')
 
+    var form = $(this).children()
+    if (validator(form, 9)) {
+        return
+    }
+
     if (q6) {
         $('#scholarsModalMsg').html('')
         $('#scholarsModalMsg').html('<i>We regret that you are not eligible for the scholarship that our school is currently giving.Thank you so much and have a good one!</i>')
@@ -276,6 +285,19 @@ $('.collegeform').submit(function (e) {
     $('#scholarsModal').modal('toggle')
 })
 
+const validator = (form, count) => {
+    let check_counts = 0
+    var inputs = form.find('input[type="checkbox"]')
+    $.each(inputs, function (key, index) {
+        if (index.checked) {
+            check_counts++
+        }
+    })
+
+    if (check_counts < count) {
+        return true
+    }
+}
 
 $('.homechoicesform').submit(function (e) {
     e.preventDefault()
